@@ -1,9 +1,19 @@
+<p align="center">
+<img src="https://i.postimg.cc/bvpGxNBx/image.png" />
+</p>
+
+<br/>
+
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+
+<br/>
+
 >## About
 Repo for the "Imersão Java" [Alura](https://www.alura.com.br/) classes.
 + Class 1: Consuming external Movie API in Vanilla Java (no libs) 
-+ Class 2: 
-+ Class 3:
-+ Class 4: 
++ Class 2: <i>loading...</i>
++ Class 3: <i>loading...</i> 
++ Class 4: <i>loading...</i>
 
 <br/>
 
