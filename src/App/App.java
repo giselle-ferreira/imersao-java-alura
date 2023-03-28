@@ -1,6 +1,5 @@
 package App;
 
-import java.awt.Font;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -11,12 +10,15 @@ import java.util.List;
 import java.util.Map;
 
 public class App {
-	
+		
 	public static final String ANSI_CYAN = "\u001B[36;4m"; 
+	public static final String ANSI_WHITE = "\u001B[30;1m"; 
 	public static final String ANSI_YELLOW = "\u001B[33m"; 
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String STAR = ANSI_YELLOW + "★" + ANSI_RESET;
+	public static final String STAR_EMPTY = ANSI_WHITE + "☆" + ANSI_RESET;
 	
+		
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		//connection
@@ -37,10 +39,16 @@ public class App {
 			System.out.println(ANSI_CYAN +(filme.get("title").toUpperCase()) + ANSI_RESET);
 			System.out.println("Poster: " + filme.get("image"));
 			System.out.println("Classificação: " + ANSI_YELLOW + filme.get("imDbRating") + ANSI_RESET);
+			System.out.println("Posição: " + ANSI_YELLOW + filme.get("rank") + ANSI_RESET);
 			
-			var rating = (filme.get("imDbRating");
+			var rating = (filme.get("imDbRating"));
 			
 			if(Double.parseDouble(rating) >= 8 
+					&& Double.parseDouble(rating) < 9) {
+				System.out.println(STAR + STAR + STAR + STAR + STAR_EMPTY );
+			}
+			
+			if(Double.parseDouble(rating) >= 9 
 					&& Double.parseDouble(rating) <= 10) {
 				System.out.println(STAR + STAR + STAR + STAR + STAR );
 			}
