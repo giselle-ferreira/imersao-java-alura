@@ -1,17 +1,22 @@
 package App;
 
+import java.awt.Font;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 public class App {
-
+	
+	public static final String ANSI_CYAN = "\u001B[36;4m"; 
+	public static final String ANSI_YELLOW = "\u001B[33m"; 
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String STAR = ANSI_YELLOW + "★" + ANSI_RESET;
+	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		//connection
@@ -26,14 +31,20 @@ public class App {
 		//extracting data
 		var parser = new JsonParser();
 		List<Map<String, String>> listaDeFilmes = parser.parse(body);
-		//System.out.println(listaDeFilmes.size());
-		//System.out.println(listaDeFilmes.get(0));
 		
 		//showing data
 		for (Map<String, String> filme : listaDeFilmes) {
-			System.out.println(filme.get("title"));
-			System.out.println(filme.get("image"));
-			System.out.println(filme.get("imDbRating"));
+			System.out.println(ANSI_CYAN +(filme.get("title").toUpperCase()) + ANSI_RESET);
+			System.out.println("Poster: " + filme.get("image"));
+			System.out.println("Classificação: " + ANSI_YELLOW + filme.get("imDbRating") + ANSI_RESET);
+			
+			var rating = (filme.get("imDbRating");
+			
+			if(Double.parseDouble(rating) >= 8 
+					&& Double.parseDouble(rating) <= 10) {
+				System.out.println(STAR + STAR + STAR + STAR + STAR );
+			}
+
 			System.out.println();
 		}
 	}
