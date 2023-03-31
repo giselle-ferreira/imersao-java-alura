@@ -37,7 +37,7 @@ public class stickerGenerator {
 		graphics.drawString("TOPPERSSON", 30, newHeight - 70);
 		
 		// writes new image in a file
-		ImageIO.write(newImage, "png", new File(newFile));
+		ImageIO.write(newImage, "png", new File("saida/" + newFile));
 	}
 	
 //	public static void main(String[] args) throws Exception {
