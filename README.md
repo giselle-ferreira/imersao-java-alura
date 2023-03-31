@@ -13,7 +13,9 @@ Repo for the "Imersão Java" [Alura](https://www.alura.com.br/) classes.
 + Class 1: Consuming external Movie API in Vanilla Java (no libs) 
 <img src="https://i.postimg.cc/8PsMfrRW/image.png">
 
-+ Class 2: <i>loading...</i>
++ Class 2: Creates Sticker's generator
+<img src="https://i.postimg.cc/sf03YJmy/image.png">
+
 + Class 3: <i>loading...</i> 
 + Class 4: <i>loading...</i>
 
